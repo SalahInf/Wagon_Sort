@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: 673b872a21ef8d64eb577f6ec9401f4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5913901188173783940
+    second: Select level (back, money, level locked, current lvl, left right arrow)_0
+  - first:
+      213: 2081210046946301892
+    second: Select level (back, money, level locked, current lvl, left right arrow)_2
+  - first:
+      213: 7793368795289276394
+    second: Select level (back, money, level locked, current lvl, left right arrow)_13
+  - first:
+      213: 4714274673076085487
+    second: Select level (back, money, level locked, current lvl, left right arrow)_14
+  - first:
+      213: 3949253857511569015
+    second: Select level (back, money, level locked, current lvl, left right arrow)_15
+  - first:
+      213: -3789743545518459247
+    second: Select level (back, money, level locked, current lvl, left right arrow)_16
+  - first:
+      213: 7616582499105477376
+    second: Select level (back, money, level locked, current lvl, left right arrow)_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1136
+        width: 116
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483ebd52cc5621250800000000000000
+      internalID: 5913901188173783940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1045
+        width: 357
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7553fc281f1ec10800000000000000
+      internalID: 2081210046946301892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_13
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 988
+        width: 176
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefc4d6d0ab972c60800000000000000
+      internalID: 7793368795289276394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_14
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 816
+        width: 136
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2225e76d77c6140800000000000000
+      internalID: 4714274673076085487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_15
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 116
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77671d895719ec630800000000000000
+      internalID: 3949253857511569015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 396
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196fa830350286bc0800000000000000
+      internalID: -3789743545518459247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Select level (back, money, level locked, current lvl, left right arrow)_17
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 116
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00393a5bd6983b960800000000000000
+      internalID: 7616582499105477376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7a32b1fef69cb7b418bf4063f968ef13
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Select level (back, money, level locked, current lvl, left right arrow)_0: 5913901188173783940
+      Select level (back, money, level locked, current lvl, left right arrow)_13: 7793368795289276394
+      Select level (back, money, level locked, current lvl, left right arrow)_14: 4714274673076085487
+      Select level (back, money, level locked, current lvl, left right arrow)_15: 3949253857511569015
+      Select level (back, money, level locked, current lvl, left right arrow)_16: -3789743545518459247
+      Select level (back, money, level locked, current lvl, left right arrow)_17: 7616582499105477376
+      Select level (back, money, level locked, current lvl, left right arrow)_2: 2081210046946301892
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

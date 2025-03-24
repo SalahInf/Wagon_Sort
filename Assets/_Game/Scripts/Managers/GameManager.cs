@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        level = PlayerPrefs.GetInt("level", 1);
+        level = PlayerPrefs.GetInt("level", 0);
 
     }
     private void Start()

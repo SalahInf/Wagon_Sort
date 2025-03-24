@@ -124,6 +124,7 @@ MonoBehaviour:
   VanishEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   followDistance: 0.25
   followSpeed: 30
+  isActive: 1
 --- !u!1 &8201425854007220353
 GameObject:
   m_ObjectHideFlags: 0

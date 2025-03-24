@@ -1,234 +1,4 @@
-//using DG.Tweening;
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using Color = UnityEngine.Color;
-
-//public class WagonController : MonoBehaviour
-//{
-//    public List<WagonHolder> wagonHolder;
-//    [SerializeField] LayerMask _layer;
-//    float sizeCell = 1;
-//    Camera _mainCam => Camera.main;
-//    Wagon wagon;
-//    public Grid grid;
-//    RaycastHit mouseHit;
-
-//    public bool isDragging = false;
-
-//    [SerializeField] Cell targetCell;
-//    WagonHolder holder;
-//    private void Update()
-//    {
-//        Fetch();
-//    }
-//    void Fetch()
-//    {
-//        Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out mouseHit, 100, _layer);
-//        if (Input.GetMouseButtonDown(0))
-//        {
-//            if (mouseHit.collider != null && !isDragging)
-//            {
-//                holder = mouseHit.collider.GetComponentInParent<WagonHolder>();
-
-//                if (holder)
-//                {
-//                    float distance1 = Vector3.Distance(holder.wagonList[0].transform.position, mouseHit.point);
-//                    float distance2 = Vector3.Distance(holder.wagonList[holder.wagonList.Count - 1].transform.position, mouseHit.point);
-
-//                    wagon = distance1 < distance2 ? holder.wagonList[0] : holder.wagonList[holder.wagonList.Count - 1];
-
-//                    isDragging = true;
-//                    print(wagon.name);
-
-//                    StartCoroutine(FetchNewPosition());
-
-//                }
-//            }
-//        }
-
-//        if (Input.GetMouseButtonUp(0))
-//        {
-//            //CheckDirection();
-//            RestWagonChangeHead();
-//            wagon = null;
-//            isDragging = false;
-//            if (_road != null)
-//                _road.Clear();
-
-
-
-
-//        }
-
-//    }
-
-//    public List<Cell> _road = new List<Cell>();
-//    IEnumerator FetchNewPosition()
-//    {
-//        while (Input.GetMouseButton(0))
-//        {
-
-//            float distance1 = Vector3.Distance(wagon.transform.position, mouseHit.point);
-
-//            if (distance1 > 1.5f)
-//            {
-//                if (wagon != null)
-//                {
-//                    Vector3 point = mouseHit.point;
-
-//                    bool isReversed = WagonChangeHead(point, wagon);
-
-//                    for (int i = 0; i < holder.wagonList.Count; i++)
-//                    {
-//                        Vector3 dir = Vector3.zero;
-//                        Cell t = CheckDirection(point, holder.wagonList[i].currentCell, holder.wagonList[i], isReversed);
-//                        if (t != null)
-//                        {
-
-//                            if (holder.wagonList[i].isWagonHead || holder.wagonList[i].isWagonHead && holder.wagonList[i].isWagonTail/*&& holder.wagonList[i].isSelected*/)
-//                            {
-//                                if (!t.isFull)
-//                                {
-
-//                                    holder.wagonList[i].MoveWagen(t);
-//                                    isReversed = false;
-//                                }
-//                            }
-//                            else
-//                            {
-//                                if (!holder.wagonList[i - 1].previousCell.isFull)
-//                                    holder.wagonList[i].MoveWagen(holder.wagonList[i - 1].previousCell);
-//                            }
-//                        }
-//                        //  yield return null;
-
-//                        //holder.wagonList[i].MoveWagen(point);
-//                    }
-
-//                }
-
-
-//                //CheckDirection();
-//            }
-//            yield return new WaitForSeconds(0.1f);
-//            //yield return null;
-
-
-//        }
-//    }
-
-//    void CheckWagonIsOnTrack(Vector3 point)
-//    {
-//        for (int i = 1; i < holder.wagonList.Count; i++)
-//        {
-
-//            if (holder.wagonList[i].currentCell != holder.wagonList[i - 1].previousCell)
-//            {
-//                //point = holder.wagonList[i - 1].previousCell.transform.position;
-//                holder.wagonList[i].MoveWagen(holder.wagonList[i - 1].previousCell);
-//            }
-//        }
-//    }
-
-//    bool WagonChangeHead(Vector3 point, Wagon currentWagon)
-//    {
-
-//        Cell targetCell = CheckDirection(point, currentWagon.currentCell, currentWagon);
-
-//        if (targetCell == holder.wagonList[1].currentCell)
-//        {
-//            currentWagon.isWagonHead = false;
-//            holder.wagonList.Reverse();
-//            holder.wagonList[0].isWagonHead = true;
-//            wagon = holder.wagonList[0];
-//            return true;
-//        }
-//        return false;
-//    }
-
-
-//    void RestWagonChangeHead()
-//    {
-//        if (!holder.wagonList[0].isWagonTail)
-//            return;
-
-//        holder.wagonList[0].isWagonHead = false;
-//        holder.wagonList.Reverse();
-//        holder.wagonList[0].isWagonHead = true;
-//        wagon = holder.wagonList[0];
-//    }
-
-//    #region Chech MovmentPosibility
-
-//    private readonly Vector2 UP = new Vector2(0, 1);
-//    private readonly Vector2 LEFT = new Vector2(-1, 0);
-//    private readonly Vector2 DOWN = new Vector2(0, -1);
-//    private readonly Vector2 RIGHT = new Vector2(1, 0);
-
-//    private Vector2 GetCardinalDirectionVector(Vector2 direction)
-//    {
-//        direction.Normalize();
-
-//        float angleUp = Vector2.Angle(direction, UP);
-//        float angleLeft = Vector2.Angle(direction, LEFT);
-//        float angleDown = Vector2.Angle(direction, DOWN);
-//        float angleRight = Vector2.Angle(direction, RIGHT);
-
-//        float minAngle = Mathf.Min(angleUp, angleLeft, angleDown, angleRight);
-
-//        if (minAngle == angleUp)
-//            return UP;
-//        else if (minAngle == angleLeft)
-//            return LEFT;
-//        else if (minAngle == angleDown)
-//            return DOWN;
-//        else if (minAngle == angleRight)
-//            return RIGHT;
-
-//        return Vector2.zero;
-//    }
-
-//    Cell CheckDirection(Vector3 disertPosition, Cell currentCell, Wagon currentWagon, bool isReversed = false)
-//    {
-//        Vector2 adjustMouseHit = new Vector2(disertPosition.x, disertPosition.z);
-//        Vector2 adjustWagonpos = new Vector2(currentWagon.transform.position.x, currentWagon.transform.position.z);
-//        Vector2 dir = adjustMouseHit - adjustWagonpos;
-//        Vector2 validDir = GetCardinalDirectionVector(dir);
-//        int multiplayer = isReversed ? -1 : 1;
-//        int x = Mathf.RoundToInt(validDir.x) * multiplayer;
-//        int y = Mathf.RoundToInt(validDir.y) * multiplayer;
-
-//        (int, int) index = Grid.Instance.GetBlockFromPosition(new Vector3(currentCell.transform.position.x + x, currentCell.transform.position.y, currentCell.transform.position.z + y));
-//        print(validDir);
-//        bool notValid = dir.x == 0 && dir.y == 0;
-//        if (index.Item1 != -1 && !notValid)
-//        {
-
-//            Cell targetCell = currentCell.neighbors[(x, y)];
-
-//            return targetCell;
-
-//        }
-//        return null;
-//    }
-
-
-//    #endregion
-
-
-//    private void OnDrawGizmos()
-//    {
-//        Gizmos.color = Color.green;
-//        Gizmos.DrawRay(_mainCam.ScreenToWorldPoint(Input.mousePosition), Vector3.down * 1000);
-//        Gizmos.color = Color.red;
-
-//        Gizmos.DrawSphere(mouseHit.point, 0.3f);
-//    }
-
-
-//}
-
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -247,7 +17,7 @@ public class WagonMovementController : MonoBehaviour
 
     [SerializeField] Cell targetCell;
     WagonHolder holder;
-
+    public Material _tmpmat;
     #region Cardinal Dir
     private readonly Vector2 UP = new Vector2(0, 1);
     private readonly Vector2 LEFT = new Vector2(-1, 0);
@@ -257,7 +27,7 @@ public class WagonMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.lose && !GameManager.Instance.win )
+        if (!GameManager.Instance.lose && !GameManager.Instance.win)
             Fetch();
     }
 
@@ -270,10 +40,25 @@ public class WagonMovementController : MonoBehaviour
             {
                 holder = mouseHit.collider.GetComponentInParent<WagonHolder>();
 
+
+
                 if (holder && holder.isActive)
                 {
                     float distance1 = Vector3.Distance(holder.wagonList[0].transform.position, mouseHit.point);
                     float distance2 = Vector3.Distance(holder.wagonList[holder.wagonList.Count - 1].transform.position, mouseHit.point);
+
+
+                    foreach (var item in holder.wagonList)
+                    {
+                        item.transform.DOScale(1.1f, 0.1f).SetEase(Ease.InBounce);
+                        Material newMaterial = new Material(item.meshRenderer.material);
+                        Material[] mats = item.meshRenderer.materials;
+                        //_tmpmat = mats[1];
+                        mats[mats.Length - 1] = newMaterial;
+                        mats[mats.Length - 1].DOColor(mats[0].color, 0.05f);
+                        item.meshRenderer.materials = mats;
+
+                    }
 
                     if (distance1 < distance2)
                     {
@@ -298,17 +83,28 @@ public class WagonMovementController : MonoBehaviour
 
                     isDragging = true;
 
+
                     StartCoroutine(FetchNewPosition());
+
                 }
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            if (holder == null)
+                return;
+
+            foreach (var item in holder.wagonList)
+            {
+                item.transform.DOScale(1f, 0.1f).SetEase(Ease.InBounce);
+                Material[] mats = item.meshRenderer.materials;
+                mats[mats.Length - 1] = _tmpmat;
+                mats[mats.Length - 1].DOColor(_tmpmat.color, 0.05f);
+                item.meshRenderer.materials = mats;
+            }
             isDragging = false;
             wagon = null;
-            if (_road != null)
-                _road.Clear();
         }
     }
 
@@ -333,7 +129,6 @@ public class WagonMovementController : MonoBehaviour
 
             if (wagon == null || !holder.isActive)
                 break;
-
 
             float distance1 = Vector3.Distance(wagon.transform.position, mouseHit.point);
 
@@ -362,7 +157,6 @@ public class WagonMovementController : MonoBehaviour
                             }
                         }
 
-
                         if (nextCell != null && !isReversed)
                             if (!nextCell.isFull)
                             {
@@ -375,8 +169,6 @@ public class WagonMovementController : MonoBehaviour
                                     Cell wagonPreviousCell = holder.wagonList[i].currentCell;
                                     holder.wagonList[i].MoveWagen(headPreviousCell);
                                     headPreviousCell = wagonPreviousCell;
-
-                                    //yield return null;
                                 }
                             }
                     }

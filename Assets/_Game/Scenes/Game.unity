@@ -10030,6 +10030,7 @@ MonoBehaviour:
     m_Bits: 192
   isDragging: 0
   targetCell: {fileID: 0}
+  _tmpmat: {fileID: 2100000, guid: 4d3fb4725929e494b88fad2b93deae43, type: 2}
   _road: []
 --- !u!4 &1819717995
 Transform:

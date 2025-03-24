@@ -18,6 +18,7 @@ public class WagonHolder : MonoBehaviour
     [SerializeField] GameObject whole;
     [SerializeField] GameObject VanishEffect;
 
+
     public float followDistance = 0.1f;
     public float followSpeed = 25f;
 

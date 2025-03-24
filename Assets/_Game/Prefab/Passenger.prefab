@@ -117,3 +117,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 467631828429652630}
+  _sitDownEffect: {fileID: 2293404229495174315, guid: 5d9151a249d2c504394dc5da522653fc,
+    type: 3}

@@ -122,6 +122,8 @@ MonoBehaviour:
   _arrowSprite: {fileID: 7423990043832522425}
   whole: {fileID: 736104705939586382, guid: 0ce2cea7434979f44a92ec4ed35ed9d8, type: 3}
   VanishEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  _sitDownEffect: {fileID: 2293404229495174315, guid: 5d9151a249d2c504394dc5da522653fc,
+    type: 3}
   followDistance: 0.25
   followSpeed: 30
   isActive: 1

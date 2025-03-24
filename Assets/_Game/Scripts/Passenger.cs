@@ -6,6 +6,8 @@ using DG.Tweening;
 public class Passenger : MonoBehaviour
 {
     [SerializeField] Animator _animator;
+    [SerializeField] GameObject _sitDownEffect;
+
 
     public void Jump(Vector3 startPos, Transform endPos, float height, float duration)
     {
@@ -27,6 +29,7 @@ public class Passenger : MonoBehaviour
             yield return null;
         }
         _animator.SetTrigger("SitDown");
+        Destroy(Instantiate(_sitDownEffect, endPos.position, Quaternion.identity),0.5f);
         obj.transform.position = endPos.position;
     }
 
